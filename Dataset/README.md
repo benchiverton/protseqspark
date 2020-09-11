@@ -1,12 +1,10 @@
-# Spark
+# Protein Sequence Dataset
 
-> **Apache Spark™** is a unified analytics engine for large-scale data processing.
-
-https://spark.apache.org/
+Contains the code required to load protein sequences into a RDD (Resilient Distributed Dataset). 
 
 ## Getting Started
 
-### Installing JDK (Windows)
+#### Installing JDK (Windows)
 
 **JSK Version:** 14.0.2
 
@@ -15,7 +13,7 @@ https://spark.apache.org/
 3. Add `%JAVA_HOME%\bin` to the systems 'Path' environment variable
 4. Verify instillation by running `javac --help`
 
-### Installing Spark (Windows)
+#### Installing Spark (Windows)
 
 **Spark Version:** 3.0.0
 
@@ -27,7 +25,7 @@ https://spark.apache.org/
 4. Add a new system environment variable named `SPARK_HOME` with value `C:\Spark`
 5. Add a new system environment variable named `HADOOP_HOME` with value `C:\Spark`
 6. Add `%SPARK_HOME%\bin` and `%HADOOP_HOME%\bin` to the systems 'Path' environment variable
-7. Optional - update logging level of Spark
+7. Optional - update logging level of Spark to `ERROR`
    1. Navigate to `C:\Spark\conf`
    2. Copy `log4j.properties.template` into the same directory
    3. Open `log4j.properties - Copy.template` and change all logging to `ERROR`
@@ -36,14 +34,14 @@ https://spark.apache.org/
 
 #### Spark Test Script
 
-The following script will verify if Spark & Hadoop are working as intended. It counts each word in the Spark README file and writes its results to the directory `SparkTest/ReadMeWordCount`.
+The following script is intended to be run through the Spark Shell and will verify if Spark is working as intended. It counts each word in the Spark README file and writes each word and it's count to `SparkTest/ReadMeWordCount`. 
 
 ```
-val a = sc.textFile("file:///Spark/README.md")
-val b = a.flatMap(line => line.split(" "))
-val c = b.map(word => (word, 1))
-val d = c.reduceByKey((x, y) => x + y)
-val e = d.sortBy(x => x._2, false)
-e.saveAsTextFile("file:///SparkTest/ReadMeWordCount")
+val textFile = sc.textFile("file:///Spark/README.md")
+val tokenisedFileData = textFile.flatMap(line => line.split(" "))
+val countPrep = tokenisedFileData.map(word => (word, 1))
+val counts = countPrep.reduceByKey((x, y) => x + y)
+val sortedCounts = counts.sortBy(x => x._2, false)
+sortedCounts.saveAsTextFile("file:///SparkTest/ReadMeWordCount")
 ```
 
