@@ -6,7 +6,7 @@ Contains the code required to load protein sequences into a RDD (Resilient Distr
 
 #### Installing JDK (Windows)
 
-**JSK Version:** 14.0.2
+**JDK Version:** 14.0.2
 
 1. Install the JDK by downloading your preferred package/archive/installer from https://www.oracle.com/java/technologies/javase-jdk14-downloads.html
 2. Add a new system environment variable named `JAVA_HOME` with value `C:\Progra~1\Java\jdk-14.0.2`
