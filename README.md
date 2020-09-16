@@ -14,7 +14,7 @@ Checkout the repo and run the following commands in the base directory of the re
 # create your virtual environment at the base of the repo
 virtualenv .venv
 # activate your virtual environment
-.venv\Scripts\activate.ps1
+.venv\Scripts\activate
 # install tools used for the setup script
 pip install -U setuptools wheel build
 # install project dependencies
