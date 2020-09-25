@@ -19,6 +19,8 @@ virtualenv .venv
 pip install -U setuptools wheel build
 # install project dependencies
 python setup.py install
+# create .egg file for protein_sequences module
+python setup.py bdist_egg
 
 # deactivate virtual environment
 deactivate
