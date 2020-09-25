@@ -1,8 +1,6 @@
 import sys
 import os
 
-from protein_sequences import sequence
-from pyspark import SparkConf, SparkContext
 from pyspark.sql import SparkSession
 
 if __name__ == "__main__":

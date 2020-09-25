@@ -1,13 +1,11 @@
 import sys
 import os
-
-from protein_sequences import sequence
-from Bio import SeqIO
+from protein_sequences import ProtSeqIO
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("""
-        Usage: fasta_to_tsv.py <fasta_file>
+        Usage: ./src/fasta_to_tsv.py <fasta_file>
 
         Assumes you have a fasta file stored in <fasta_file>.
         """, file=sys.stderr)
@@ -17,12 +15,4 @@ if __name__ == "__main__":
     pre, ext = os.path.splitext(fasta_file)
     tsv_file = f'{pre}.tsv'
 
-    file = open(tsv_file, "x")
-
-    for seq_record in SeqIO.parse(fasta_file, "fasta"):
-        header = str(seq_record.id).split('|')
-        accessionSpecie = str(header[2]).split("_")
-        seq = sequence(header[1], accessionSpecie[0], accessionSpecie[1], seq_record.seq)
-        file.write(f'{seq.toTsv()}\n')
-
-    file.close()
+    ProtSeqIO.writeSequenceToTsv(tsv_file, ProtSeqIO.readSequencesFromFasta(fasta_file))
