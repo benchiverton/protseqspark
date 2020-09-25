@@ -20,7 +20,7 @@ if __name__ == "__main__":
 
     sequencesParquetFile = spark.read.parquet(parquet_file)
 
-    filteredSequences = sequencesParquetFile.filter(sequencesParquetFile.accession == "Q6F1Z5")
+    filteredSequences = sequencesParquetFile.filter(sequencesParquetFile.sequence.contains("EMIL"))
     filteredSequences.show()
 
     spark.stop()
