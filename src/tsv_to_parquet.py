@@ -8,7 +8,7 @@ from pyspark.sql import SparkSession
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("""
-        Usage: tsv_to_parquet.py --py-files src/dist/*.egg <tsv_file>
+        Usage: spark-submit --py-files src/dist/*.egg .\src\tsv_to_parquet.py <tsv_file>
 
         Assumes you have a TSV file stored in <tsv_file>.
         """, file=sys.stderr)
