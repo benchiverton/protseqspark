@@ -1,6 +1,6 @@
 import sys
 import os
-from protein_sequences import ProtSeqIO
+from protseqspark import ProtSeqIO
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:

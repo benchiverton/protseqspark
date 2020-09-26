@@ -1,8 +1,8 @@
 import sys
 import os
 
-from protein_sequences.ProtSeq import ProteinSequence
-from protein_sequences import ProtSeqDF
+from protseqspark.ProtSeq import ProteinSequence
+from protseqspark import ProtSeqDF
 from pyspark.sql import SparkSession
 
 if __name__ == "__main__":

@@ -15,7 +15,7 @@ here = pathlib.Path(__file__).parent.resolve()
 long_description = (here / 'README.md').read_text(encoding='utf-8')
 
 setup(
-    name='protein_sequences',
+    name='protseqspark',
     version='0.0.1',
     description='Functions and scripts to analyse protein sequences',
     long_description=long_description,
