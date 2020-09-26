@@ -2,6 +2,7 @@ import sys
 import os
 
 from protein_sequences.ProtSeq import ProteinSequence
+from protein_sequences import ProtSeqDF
 from pyspark.sql import SparkSession
 
 if __name__ == "__main__":
@@ -19,7 +20,7 @@ if __name__ == "__main__":
     
     spark = SparkSession.builder.appName("TsvToParquet").getOrCreate()
 
-    sequencesDF = spark.read.csv(tsv_file, schema=ProteinSequence.schema(), sep="\t")
+    sequencesDF = spark.read.csv(tsv_file, schema=ProtSeqDF.proteinSequenceSchema(), sep="\t")
     sequencesDF.printSchema()
     sequencesDF.write.parquet(parquet_file)
 

@@ -21,8 +21,7 @@ setup(
     long_description=long_description,
     long_description_content_type='text/markdown',
     url='https://github.com/benchiverton/ProteinSequences',
-    package_dir={'': 'src'},
-    packages=find_packages(where='src'),
+    packages=find_packages(),
     python_requires='>=3.5, <4',
     install_requires=[
         'pyspark',
