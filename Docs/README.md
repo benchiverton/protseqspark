@@ -1,11 +1,3 @@
-# Protein Sequences
-
-Python project for protein sequence analysis.
-
-Contains the code required to load protein sequences into parquet files from multiple formats.
-
-Contains the code that analyses protein sequences stored in parquet files.
-
 ## Getting Started
 
 Checkout the repo and run the following commands in the base directory of the repo:
