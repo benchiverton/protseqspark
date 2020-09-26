@@ -11,8 +11,7 @@ virtualenv .venv
 pip install -U setuptools wheel build
 # install project dependencies
 python setup.py install
-# create .egg file for protein_sequences module
-python setup.py bdist_egg
+# note: you may need to restart your IDE after these steps in order for intellisense to work
 
 # deactivate virtual environment
 deactivate
