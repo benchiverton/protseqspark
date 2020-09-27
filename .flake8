@@ -23,7 +23,7 @@ statistics = True
 # File specific ignores:
 # ========================
 per-file-ignores =
-    */__init__.py:F403
+    protseqspark/*/__init__.py:F403
 
 # =======================
 # flake8-quotes settings:
