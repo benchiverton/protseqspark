@@ -1,9 +1,6 @@
-name: Build and Test
+name: Test using PyTest
 
 on: [push]
-
-env:
-  PYTHON_VERSION: 3.8.5
 
 jobs:
   build:
@@ -23,7 +20,7 @@ jobs:
         pip install pytest setuptools wheel build
         python setup.py install
     - name: Test with pytest
-      run: pytest --doctest-modules --junitxml=junit/test-results-${{ matrix.python-version }}.xml
+      run: pytest --junitxml=junit/test-results-${{ matrix.python-version }}.xml
     - name: Upload pytest test results
       uses: actions/upload-artifact@v2
       with:
