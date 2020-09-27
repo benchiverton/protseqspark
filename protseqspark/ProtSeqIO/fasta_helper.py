@@ -11,4 +11,4 @@ def readSequencesFromFasta(fasta_file: str) -> Iterator[ProteinSequence]:
             header[1],
             accessionSpecie[0],
             accessionSpecie[1],
-            seq_record.seq)
+            str(seq_record.seq))

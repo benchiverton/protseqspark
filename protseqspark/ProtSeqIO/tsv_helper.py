@@ -14,5 +14,5 @@ def sequenceToTsv(seq: ProteinSequence) -> str:
 
 
 def sequenceFromTsv(row: str) -> ProteinSequence:
-    parts = row.split("\t")
+    parts = row.rstrip().split("\t")
     return ProteinSequence(parts[0], parts[1], parts[2], parts[3])
