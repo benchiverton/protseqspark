@@ -1,3 +1,5 @@
+![Test using pytest](https://github.com/benchiverton/protseqspark/workflows/Test%20using%20pytest/badge.svg)![Lint using Flake8](https://github.com/benchiverton/protseqspark/workflows/Lint%20using%20Flake8/badge.svg)
+
 # Protein Sequences Spark Library
 
 Python project for protein sequence analysis using [Apache Spark](https://spark.apache.org/).
