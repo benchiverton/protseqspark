@@ -22,7 +22,7 @@ setup(
     long_description_content_type='text/markdown',
     url='https://github.com/benchiverton/ProteinSequences',
     packages=find_packages(),
-    python_requires='>=3.5, <4',
+    python_requires='>=3.7, <4',
     install_requires=[
         'pyspark',
         'biopython'
