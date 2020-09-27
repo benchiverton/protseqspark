@@ -9,7 +9,7 @@ env:
   PYTHON_VERSION: 3.8.5
 
 jobs:
-  lint:
+  build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -24,6 +24,6 @@ jobs:
     - name: Run flake8
       uses: suo/flake8-github-action@releases/v1
       with:
-        checkName: 'lint'
+        checkName: 'build'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
