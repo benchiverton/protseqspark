@@ -16,5 +16,5 @@ if __name__ == "__main__":
     tsv_file = f'{pre}.tsv'
 
     ProtSeqIO.writeSequenceToTsv(
-        tsv_file, 
+        tsv_file,
         ProtSeqIO.readSequencesFromFasta(fasta_file))
