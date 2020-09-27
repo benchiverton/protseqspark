@@ -2,6 +2,7 @@ from typing import Iterator
 from Bio import SeqIO
 from ..ProtSeq import ProteinSequence
 
+
 def readSequencesFromFasta(fasta_file: str) -> Iterator[ProteinSequence]:
     for seq_record in SeqIO.parse(fasta_file, "fasta"):
         header = str(seq_record.id).split('|')

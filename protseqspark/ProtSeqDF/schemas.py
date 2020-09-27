@@ -1,5 +1,6 @@
 from pyspark.sql.types import StructType, StringType
 
+
 def proteinSequenceSchema() -> StructType:
     return StructType() \
         .add("accession", StringType(), False) \
