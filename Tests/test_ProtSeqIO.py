@@ -4,21 +4,18 @@ from protseqspark.ProtSeq import ProteinSequence
 from protseqspark import ProtSeqIO
 
 proteome1_seqs = [
-    # noqa
     ProteinSequence(
         "Q6F1Z5",
         "RS10",
         "MESFL",
         "MAEQKMRIKLKGYDHAIIDQSILKIIEAAEGTGAKVRGPIPLPTDKQVITILRAVHKYKDSREQFEMRTHKRLLEILNPTPTTMDVLKRVQLPSGVDIEIKL"
         ),
-    # noqa
     ProteinSequence(
         "Q6F0Y1",
         "TSAD",
         "MESFL",
         "MKILAIESSCDEFSISIIDDGKILTNIISSQIDQHVNFGGVVPELAARLHLENISWVIKSALESSNTKIEEIDHVAYTEKPGLIGSLIIGKLVAETIASYIDKPLMPLHHIEGHIYGASIENEFVYPVLAMVVSGGHTQIEIVNSPNEFEVIGATLDDAIGECYDKVARVMGLGYPGGPKIDKLAQKGNKEAFIFPISKNDDSYDFSYSGLKTAVINIIHNLTQKGEEIPVADIAASFQYAATKIVEKKLEKAIIQFKPKTLTVAGGVSANSEIRNIIMSLGKKYNITNTFVPKMEYCTDNAAMIAKLAYEKLKSSN"
         ),
-    # noqa
     ProteinSequence(
         "Q6F1W7",
         "RPOA",
@@ -27,9 +24,12 @@ proteome1_seqs = [
         ),
 ]
 
+
 class TestFastaHelper:
     def test_readFastaFileCorrectly(self):
-        seqs = list(ProtSeqIO.readSequencesFromFasta("Tests/Fasta/proteome1.fasta"))
+        seqs = list(ProtSeqIO.readSequencesFromFasta(
+            "Tests/Fasta/proteome1.fasta"
+        ))
         assert len(proteome1_seqs) == len(seqs)
         assert proteome1_seqs[0] == seqs[0]
         assert proteome1_seqs[1] == seqs[1]
