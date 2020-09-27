@@ -1,0 +1,15 @@
+[flake8]
+doctests = True
+exclude = .svn,CVS,.bzr,.hg,.git,__pycache__,.tox,.github,build,.venv
+
+# ========================
+# File specific ignores:
+# ========================
+per-file-ignores =
+    **/__init__.py:F401,F403
+    Tests/*:E501
+
+# =======================
+# flake8-quotes settings:
+# =======================
+inline-quotes = double

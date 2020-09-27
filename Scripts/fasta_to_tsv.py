@@ -5,7 +5,7 @@ from protseqspark import ProtSeqIO
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("""
-        Usage: ./src/fasta_to_tsv.py <fasta_file>
+        Usage: fasta_to_tsv.py <fasta_file>
 
         Assumes you have a fasta file stored in <fasta_file>.
         """, file=sys.stderr)
@@ -15,4 +15,6 @@ if __name__ == "__main__":
     pre, ext = os.path.splitext(fasta_file)
     tsv_file = f'{pre}.tsv'
 
-    ProtSeqIO.writeSequenceToTsv(tsv_file, ProtSeqIO.readSequencesFromFasta(fasta_file))
+    ProtSeqIO.writeSequenceToTsv(
+        tsv_file,
+        ProtSeqIO.readSequencesFromFasta(fasta_file))
