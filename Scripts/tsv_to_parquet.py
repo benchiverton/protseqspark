@@ -19,9 +19,9 @@ if __name__ == "__main__":
 
     spark = SparkSession.builder.appName("TsvToParquet").getOrCreate()
 
-    sequencesDF = spark.read.csv( \
-        tsv_file, \
-        schema=ProtSeqDF.proteinSequenceSchema(), \
+    sequencesDF = spark.read.csv(
+        tsv_file,
+        schema=ProtSeqDF.proteinSequenceSchema(),
         sep="\t")
     sequencesDF.printSchema()
     sequencesDF.write.parquet(parquet_file)
