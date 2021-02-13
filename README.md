@@ -10,11 +10,11 @@ Checkout the repo and run the following commands in the base directory of the re
 
 ```bash
 # create your virtual environment at the base of the repo
-virtualenv .venv
+python -m virtualenv .venv
 # activate your virtual environment
 .venv\Scripts\activate
 # install tools used for the setup script
-pip install -U setuptools wheel build
+pip install -U pytest setuptools wheel build
 # install project dependencies
 python setup.py install
 # note: you may need to restart your IDE after these steps in order for intellisense to work
