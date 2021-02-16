@@ -5,6 +5,11 @@ import pytest
 
 
 class TestRead:
+    def test_readsHeaderFromBamFile1Correctly(self):
+        bf = BamFile('Tests/Bam/bam1.bam')
+        bf.readHeader(bf.generator())
+        assert bf.file_chromosomes != []
+
     def test_getBamRecordsFromBamFile1Correctly(self):
         bf = BamFile('Tests/Bam/bam1.bam')
         for sequence in bf.getBamRecords():
@@ -21,6 +26,11 @@ class TestRead:
         bf = BamFile('Tests/Bam/bam1.bam')
         for sequence in bf.getBamRecords():
             assert sequence.sam_rname(bf.file_chromosomes) == '*' or sequence.sam_rname(bf.file_chromosomes).decode("utf-8") == '1'
+
+    def test_readsHeaderFromBamFile2Correctly(self):
+        bf = BamFile('Tests/Bam/bam2.bam')
+        bf.readHeader(bf.generator())
+        assert bf.file_chromosomes != []
 
     def test_getBamRecordsFromBamFile2Correctly(self):
         bf = BamFile('Tests/Bam/bam2.bam')
